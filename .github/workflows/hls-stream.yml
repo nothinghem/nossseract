@@ -27,7 +27,7 @@ jobs:
           import subprocess, time
 
           STREAM_INPUT = "http://x96.us:8880/live/871654860675/TVSTARIPTV/578223.m3u8"
-          RTMP_OUTPUT = "rtmp://global-live.mux.com:5222/app/ea526e4e-f0e9-4491-665a-e7f017349438"
+          RTMP_OUTPUT = "rtmp://global-live.mux.com:5222/app/4035f08e-ebd5-87a0-c68c-ccff531b1e5b"
 
           def start_stream():
             return subprocess.Popen([
