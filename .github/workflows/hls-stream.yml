@@ -26,8 +26,8 @@ jobs:
           python3 - <<'EOF'
           import subprocess, time
 
-          STREAM_INPUT = "http://x96.us:8880/837393232103/TVSTARIPTV/28943.ts"
-          RTMP_OUTPUT = "rtmp://global-live.mux.com:5222/app/4035f08e-ebd5-87a0-c68c-ccff531b1e5b"
+          STREAM_INPUT = "http://x96.us:8880/live/837393232103/TVSTARIPTV/481943.m3u8"
+          RTMP_OUTPUT = "rtmp://global-live.mux.com:5222/app/b6e5cc4b-3d7d-3847-c0e8-84f668314507"
 
           def start_stream():
             return subprocess.Popen([
