@@ -26,20 +26,30 @@ jobs:
           python3 - <<'EOF'
           import subprocess, time
 
-          STREAM_INPUT = "http://x96.us:8880/live/837393232103/TVSTARIPTV/132397.m3u8"
-          RTMP_OUTPUT = "rtmp://global-live.mux.com:5222/app/bfd44ce7-a686-6eea-03e5-18653e1e7b6e"
+          STREAM_INPUT = "https://api.sportsbite.xyz/hls/39.m3u8"
+          RTMP_OUTPUT = "rtmp://bangalore.restream.io/live/re_5437878_evente68e028ddf3945ac8589d7b000962f09"
 
           def start_stream():
+            headers = (
+                "Origin: https://sportsbite.xyz\r\n"
+                "Referer: https://sportsbite.xyz/\r\n"
+            )
+        
             return subprocess.Popen([
-                "ffmpeg", "-re",
+                "ffmpeg",
+                "-re",
+                "-headers", headers,
+                "-user_agent", "Mozilla/5.0",
                 "-i", STREAM_INPUT,
+        
                 "-i", "logo.png",
                 "-filter_complex", "overlay=10:10",
+        
                 "-vcodec", "libx264",
                 "-vprofile", "baseline",
                 "-g", "30",
+        
                 "-acodec", "aac",
-                "-strict", "-2",
                 "-f", "flv",
                 RTMP_OUTPUT
             ])
