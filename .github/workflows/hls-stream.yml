@@ -26,7 +26,7 @@ jobs:
           python3 - <<'EOF'
           import subprocess, time
 
-          STREAM_INPUT = "https://api.sportsbite.xyz/hls/598.m3u8"
+          STREAM_INPUT = "https://api.sportsbite.xyz/hls/346.m3u8"
           RTMP_OUTPUT = "rtmp://bangalore.restream.io/live/re_5437878_evente68e028ddf3945ac8589d7b000962f09"
 
           def start_stream():
